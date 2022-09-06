@@ -1,30 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace dining_room
 {
-    public class Check // Чек для покупателя (название блюда, стоимость, фамилия, имя и отчество сотрудника, дата и время)
+    public class Check : ISNPtoString // Чек для покупателя (название блюда, фамилия, имя и отчество сотрудника, стоимость, дата и время)
     {
-        public string ProductName { get; set; }
-        public int Price { get; set; }
+        public List<string> ProductNames { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
+        public int Price { get; set; }
         public DateTime DateAndTimeNow { get; set; }
         
 
-        public Check(string productName, int price, string surname, string name, string patronymic)
+        public Check(List<string> productName, string surname, string name, string patronymic, int [] price)
         {
-            ProductName = productName;
-            Price = price;
+            ProductNames = productName;
             Surname = surname;
             Name = name;
             Patronymic = patronymic;
+            Price = price.Sum();
             DateAndTimeNow = DateTime.Now;
         }
         
         public override string ToString()
         {
-            return base.ToString();
+            StringBuilder newCheck = new StringBuilder();
+            newCheck.Append("Блюда: ");
+            foreach (var str in ProductNames)
+            {
+                newCheck.Append(str + " ");
+            }
+            newCheck.AppendLine();
+            newCheck.AppendLine($"Итоговая стоимость: {Price}");
+            newCheck.AppendLine($"ФИО сотрудника: {SNPtoString()}");
+            newCheck.AppendLine($"Дата и время: {DateAndTimeNow}");
+
+            return newCheck.ToString();
+        }
+
+        public string SNPtoString()
+        {
+            return $"{Surname} {Name} {Patronymic}";
         }
     }
 }
