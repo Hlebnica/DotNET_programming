@@ -22,5 +22,7 @@ namespace dining_room
             return $"Название продукта: {ProductName}, Ингридиенты: {Ingredients}, Вес: {Weight}, Цена: {Price}";
         }
         
+        
+        
     }
 }

@@ -31,6 +31,12 @@ namespace dining_room
             Check check = new Check(checkNow, "Петров", "Петр", "Петрович", pricesNow);
             
             Console.WriteLine(check);
+
+            Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
+            vanya.Greetings();
+
+            Cook galya = new Cook("Галинченко", "Галя", "Галинченко", 32000);
+            galya.Greetings();
         }
     }
 }
