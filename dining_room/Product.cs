@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace dining_room
 {
@@ -16,13 +18,12 @@ namespace dining_room
             Weight = weight;
             Price = price;
         }
-
+        
         public override string ToString()
         {
             return $"Название продукта: {ProductName}, Ингридиенты: {Ingredients}, Вес: {Weight}, Цена: {Price}";
         }
-        
-        
+
         
     }
 }

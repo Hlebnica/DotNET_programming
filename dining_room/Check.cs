@@ -14,7 +14,6 @@ namespace dining_room
         public int Price { get; set; }
         public DateTime DateAndTimeNow { get; set; }
         
-
         public Check(List<string> productName, string surname, string name, string patronymic, int [] price)
         {
             ProductNames = productName;

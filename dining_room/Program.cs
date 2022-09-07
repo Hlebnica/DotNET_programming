@@ -37,6 +37,8 @@ namespace dining_room
 
             Cook galya = new Cook("Галинченко", "Галя", "Галинченко", 32000);
             galya.Greetings();
+
+            vanya.NotifyOrder(checkNow);
         }
     }
 }
