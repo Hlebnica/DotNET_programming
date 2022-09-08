@@ -18,7 +18,15 @@ namespace dining_room
             
             Console.WriteLine(pureshka.ProductName);*/
 
-            List<string> checkNow = new List<string>
+            List<Product> productsList = new List<Product>()
+            {
+                new("Хлеб", "Хлеб", 20, 12),
+                new("Блины", "Блины", 200, 220),
+                new("Пирог", "Пирог", 300, 550),
+                new("Салат", "Салат", 90, 110)
+            };
+
+            List<string> orderListNow = new List<string>
             {
                 pureshka.ProductName,
                 supchik.ProductName,
@@ -28,17 +36,41 @@ namespace dining_room
             
             int[] pricesNow = { pureshka.Price, supchik.Price, pizza.Price, pirojock.Price };
 
-            Check check = new Check(checkNow, "Петров", "Петр", "Петрович", pricesNow);
-            
-            Console.WriteLine(check);
+           
 
             Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
             vanya.Greetings();
 
+            /*Cashier petya = (Cashier) vanya.Clone();
+            petya.Name = "Петр";
+            
+            Console.WriteLine(petya);*/
+            
+            vanya.NotifyOrder(orderListNow);
+            
+            Check check = new Check(orderListNow, vanya.Surname, vanya.Name, vanya.Patronymic, pricesNow);
+            
+            Console.WriteLine(check);
+
             Cook galya = new Cook("Галинченко", "Галя", "Галинченко", 32000);
             galya.Greetings();
 
-            vanya.NotifyOrder(checkNow);
+            Cook marina = (Cook) galya.Clone();
+            marina.Surname = "Мариновна";
+            marina.Name = "Марина";
+            
+            marina.Greetings();
+            
+            foreach (var food in productsList)
+            {
+                Console.WriteLine(food);
+            }
+            
+            productsList.Sort();
+            foreach (var food in productsList)
+            {
+                Console.WriteLine(food);
+            }
         }
     }
 }

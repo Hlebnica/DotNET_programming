@@ -12,7 +12,6 @@ namespace dining_room
                 return product.ProductName.CompareTo(other.ProductName);
             }
             return product!.Price.CompareTo(other!.Price);
-            
         }
     }
 }
