@@ -9,42 +9,35 @@ namespace dining_room
     {
         static void Main(string[] args)
         {
-            Product pureshka = new Product("Пюрешка", "Картофель, подлива", 100, 50);
-            Product supchik = new Product("Суп", "Картофель, вода, мясо, специи", 150, 80);
-            Product pizza = new Product("Пицца", "Тесто, сыр, помидоры", 250, 500);
-            Product pirojock = new Product("Пирожок", "Тесто, картофель", 30, 20);
-            
-            /*Console.WriteLine(pureshka);
-            
-            Console.WriteLine(pureshka.ProductName);*/
-
+            ProductSorter<Product> productSorter = new ProductSorter<Product>();
             List<Product> productsList = new List<Product>()
             {
                 new("Хлеб", "Хлеб", 20, 12),
                 new("Блины", "Блины", 200, 220),
                 new("Пирог", "Пирог", 300, 550),
-                new("Салат", "Салат", 90, 110)
+                new("Салат", "Салат", 90, 110),
+                new ("Пирожок", "Тесто, картофель", 30, 20),
+                new ("Пицца", "Тесто, сыр, помидоры", 250, 500),
+                new ("Суп", "Картофель, вода, мясо, специи", 150, 80),
+                new ("Пюрешка", "Картофель, подлива", 100, 50)
             };
 
             List<string> orderListNow = new List<string>
             {
-                pureshka.ProductName,
-                supchik.ProductName,
-                pizza.ProductName,
-                pirojock.ProductName
+                productsList[0].ProductName,
+                productsList[1].ProductName,
+                productsList[2].ProductName,
+                productsList[3].ProductName
             };
             
-            int[] pricesNow = { pureshka.Price, supchik.Price, pizza.Price, pirojock.Price };
+            int[] pricesNow = { productsList[0].Price, productsList[1].Price,
+                                productsList[2].Price, productsList[3].Price };
+            //int[] pricesNow = { pureshka.Price, supchik.Price, pizza.Price, pirojock.Price };
 
            
 
             Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
             vanya.Greetings();
-
-            /*Cashier petya = (Cashier) vanya.Clone();
-            petya.Name = "Петр";
-            
-            Console.WriteLine(petya);*/
             
             vanya.NotifyOrder(orderListNow);
             
@@ -61,16 +54,12 @@ namespace dining_room
             
             marina.Greetings();
             
+            productsList.Sort(productSorter);
             foreach (var food in productsList)
             {
                 Console.WriteLine(food);
             }
             
-            productsList.Sort();
-            foreach (var food in productsList)
-            {
-                Console.WriteLine(food);
-            }
         }
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace dining_room
 {
-    public class ProductSorter : IComparer<Product> 
+    public class ProductSorter<T> : IComparer<T>  where T : Product
     {
-        public int Compare(Product product, Product other)
+        public int Compare(T product, T other)
         {
             if (other != null && product != null && !product.ProductName.Equals(other.ProductName))
             {
