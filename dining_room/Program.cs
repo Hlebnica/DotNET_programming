@@ -9,29 +9,42 @@ namespace dining_room
     {
         static void Main(string[] args)
         {
-            ProductSorter<Product> productSorter = new ProductSorter<Product>();
-            List<Product> productsList = new List<Product>()
+            //ProductSorter<Product> productSorter = new ProductSorter<Product>();
+            Dictionary<string, Product> productsList = new Dictionary<string, Product>()
             {
-                new("Хлеб", "Хлеб", 20, 12),
-                new("Блины", "Блины", 200, 220),
-                new("Пирог", "Пирог", 300, 550),
-                new("Салат", "Салат", 90, 110),
-                new ("Пирожок", "Тесто, картофель", 30, 20),
-                new ("Пицца", "Тесто, сыр, помидоры", 250, 500),
-                new ("Суп", "Картофель, вода, мясо, специи", 150, 80),
-                new ("Пюрешка", "Картофель, подлива", 100, 50)
-            };
-
-            List<string> orderListNow = new List<string>
-            {
-                productsList[0].ProductName,
-                productsList[1].ProductName,
-                productsList[2].ProductName,
-                productsList[3].ProductName
+                {"Хлеб", new Product("Хлеб", "Хлеб", 20, 12)},
+                {"Блины", new Product("Блины", "Блины", 200, 220)},
+                {"Пирог", new Product("Пирог", "Пирог", 300, 550)},
+                {"Салат", new Product("Салат", "Салат", 90, 110)},
+                {"Пирожок", new Product("Пирожок", "Тесто, картофель", 30, 20)},
+                {"Пицца", new Product("Пицца", "Тесто, сыр, помидоры", 250, 500)},
+                {"Суп", new Product("Суп", "Картофель, вода, мясо, специи", 150, 80)},
+                {"Пюрешка", new Product("Пюрешка", "Картофель, подлива", 100, 50)}
             };
             
-            int[] pricesNow = { productsList[0].Price, productsList[1].Price,
-                                productsList[2].Price, productsList[3].Price };
+            
+            List<string> orderListNow = new List<string>(); // Список текущих заказов
+
+            CustomList myList = new CustomList(); // Булдыга для реализации 2 задания
+            myList.AppendInList(productsList["Хлеб"].ProductName);
+            myList.AppendInList(productsList["Салат"].ProductName);
+            myList.AppendInList(productsList["Пицца"].ProductName);
+            myList.AppendInList(productsList["Пюрешка"].ProductName);
+
+            foreach (string product in myList)
+            {
+                orderListNow.Add(product);
+            }
+
+            List<int> pricesNow = new List<int>();
+            pricesNow.Add(productsList["Хлеб"].Price);
+            pricesNow.Add(productsList["Салат"].Price);
+            pricesNow.Add(productsList["Пицца"].Price);
+            pricesNow.Add(productsList["Пюрешка"].Price);
+            
+            
+            /*int[] pricesNow = { productsList[0].Price, productsList[1].Price,
+                                productsList[2].Price, productsList[3].Price };*/
             //int[] pricesNow = { pureshka.Price, supchik.Price, pizza.Price, pirojock.Price };
 
            
@@ -47,18 +60,12 @@ namespace dining_room
 
             Cook galya = new Cook("Галинченко", "Галя", "Галинченко", 32000);
             galya.Greetings();
-
-            Cook marina = (Cook) galya.Clone();
-            marina.Surname = "Мариновна";
-            marina.Name = "Марина";
             
-            marina.Greetings();
-            
-            productsList.Sort(productSorter);
+            /*productsList.Sort(productSorter);
             foreach (var food in productsList)
             {
                 Console.WriteLine(food);
-            }
+            }*/
             
         }
     }

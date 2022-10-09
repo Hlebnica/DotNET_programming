@@ -14,7 +14,7 @@ namespace dining_room
         public int Price { get; set; }
         public DateTime DateAndTimeNow { get; set; }
         
-        public Check(List<string> productName, string surname, string name, string patronymic, int [] price)
+        public Check(List<string> productName, string surname, string name, string patronymic, List<int> price)
         {
             ProductNames = productName;
             Surname = surname;
@@ -27,6 +27,7 @@ namespace dining_room
         public override string ToString()
         {
             StringBuilder newCheck = new StringBuilder();
+            newCheck.AppendLine("\n----------------------------");
             newCheck.Append("Блюда: ");
             foreach (var str in ProductNames)
             {
@@ -36,7 +37,7 @@ namespace dining_room
             newCheck.AppendLine($"Итоговая стоимость: {Price}");
             newCheck.AppendLine($"ФИО сотрудника: {SNPtoString()}");
             newCheck.AppendLine($"Дата и время: {DateAndTimeNow}");
-
+            newCheck.AppendLine("----------------------------\n");
             return newCheck.ToString();
         }
 

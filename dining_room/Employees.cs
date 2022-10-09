@@ -5,7 +5,7 @@ using System.Text;
 namespace dining_room
 {
     // Поддержка ICloneable
-    public abstract class Employees : ICloneable // Информация о работнике (фамилия, имя, отчество, заработная плата)
+    public abstract class Employees // Информация о работнике (фамилия, имя, отчество, заработная плата)
     {
         public string Surname { get; set; }
         public string Name { get; set; }
@@ -20,10 +20,6 @@ namespace dining_room
             Salary = salary;
         }
         public abstract void Greetings();
-        public object Clone()
-        {
-            return MemberwiseClone();
-        }
     }
     
     class Cashier : Employees
