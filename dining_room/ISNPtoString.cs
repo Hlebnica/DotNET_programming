@@ -1,7 +1,7 @@
 ﻿namespace dining_room
 {
-    public interface ISNPtoString // Приводить фамилию, имя и отчество в одну строку
+    public interface ISnPtoString<out T> // Приводить фамилию, имя и отчество в одну строку
     {
-        string SNPtoString();
+        T SnPtoString();
     }
 }

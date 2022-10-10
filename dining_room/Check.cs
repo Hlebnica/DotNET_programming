@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dining_room
 {
-    public class Check : ISNPtoString // Чек для покупателя (название блюда, фамилия, имя и отчество сотрудника, стоимость, дата и время)
+    public class Check : ISnPtoString<string> // Чек для покупателя (название блюда, фамилия, имя и отчество сотрудника, стоимость, дата и время)
     {
         public List<string> ProductNames { get; set; }
         public string Surname { get; set; }
@@ -35,13 +35,13 @@ namespace dining_room
             }
             newCheck.AppendLine();
             newCheck.AppendLine($"Итоговая стоимость: {Price}");
-            newCheck.AppendLine($"ФИО сотрудника: {SNPtoString()}");
+            newCheck.AppendLine($"ФИО сотрудника: {SnPtoString()}");
             newCheck.AppendLine($"Дата и время: {DateAndTimeNow}");
             newCheck.AppendLine("----------------------------\n");
             return newCheck.ToString();
         }
 
-        public string SNPtoString()
+        public string SnPtoString()
         {
             return $"{Surname} {Name} {Patronymic}";
         }
