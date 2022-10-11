@@ -7,6 +7,7 @@ namespace dining_room
 {
     class Program
     {
+        delegate void Greet();
         static void Main(string[] args)
         {
             //ProductSorter<Product> productSorter = new ProductSorter<Product>();
@@ -35,6 +36,7 @@ namespace dining_room
             {
                 orderListNow.Add(product);
             }
+            myList.ClearList();
 
             List<int> pricesNow = new List<int>();
             pricesNow.Add(productsList["Хлеб"].Price);
@@ -42,12 +44,6 @@ namespace dining_room
             pricesNow.Add(productsList["Пицца"].Price);
             pricesNow.Add(productsList["Пюрешка"].Price);
             
-            
-            /*int[] pricesNow = { productsList[0].Price, productsList[1].Price,
-                                productsList[2].Price, productsList[3].Price };*/
-            //int[] pricesNow = { pureshka.Price, supchik.Price, pizza.Price, pirojock.Price };
-
-           
 
             Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
             vanya.Greetings();
@@ -59,6 +55,7 @@ namespace dining_room
             Console.WriteLine(check);
 
             Cook galya = new Cook("Галинченко", "Галя", "Галинченко", 32000);
+           
             galya.Greetings();
             
             /*productsList.Sort(productSorter);

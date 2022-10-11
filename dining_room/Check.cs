@@ -37,7 +37,7 @@ namespace dining_room
             newCheck.AppendLine($"Итоговая стоимость: {Price}");
             newCheck.AppendLine($"ФИО сотрудника: {SnPtoString()}");
             newCheck.AppendLine($"Дата и время: {DateAndTimeNow}");
-            newCheck.AppendLine("----------------------------\n");
+            newCheck.AppendLine("----------------------------");
             return newCheck.ToString();
         }
 

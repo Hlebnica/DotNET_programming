@@ -5,11 +5,17 @@ namespace dining_room
 {
     public class CustomList : IEnumerable
     {
-        private List<string> _products = new();
+        public List<string> _products = new();
+
         public void AppendInList(string nameOfProduct)
         {
             _products.Add(nameOfProduct);
         }
+        public void ClearList()
+        {
+            _products.Clear();
+        }
+        
         public IEnumerator GetEnumerator() => _products.GetEnumerator();
     }
 }
