@@ -7,7 +7,6 @@ namespace dining_room
 {
     class Program
     {
-        delegate void Greet();
         static void Main(string[] args)
         {
             //ProductSorter<Product> productSorter = new ProductSorter<Product>();
@@ -27,15 +26,21 @@ namespace dining_room
             List<string> orderListNow = new List<string>(); // Список текущих заказов
 
             CustomList myList = new CustomList(); // Булдыга для реализации 2 задания
-            myList.AppendInList(productsList["Хлеб"].ProductName);
-            myList.AppendInList(productsList["Салат"].ProductName);
-            myList.AppendInList(productsList["Пицца"].ProductName);
-            myList.AppendInList(productsList["Пюрешка"].ProductName);
+            myList.AppendInList(productsList["Хлеб"]);
+            myList.AppendInList(productsList["Салат"]);
+            myList.AppendInList(productsList["Пицца"]);
+            myList.AppendInList(productsList["Пюрешка"]);
 
-            foreach (string product in myList)
+            
+            foreach (var products in myList)
+            {
+                Console.WriteLine(products);
+            }
+
+            /*foreach (string product in myList)
             {
                 orderListNow.Add(product);
-            }
+            }*/
             myList.ClearList();
 
             List<int> pricesNow = new List<int>();

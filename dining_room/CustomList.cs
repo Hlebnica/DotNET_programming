@@ -1,16 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace dining_room
 {
     public class CustomList : IEnumerable
     {
-        public List<string> _products = new();
+        public List<Object> _products = new();
 
-        public void AppendInList(string nameOfProduct)
+        public void AppendInList(Object nameOfProduct)
         {
             _products.Add(nameOfProduct);
         }
+
+        
+        
         public void ClearList()
         {
             _products.Clear();
