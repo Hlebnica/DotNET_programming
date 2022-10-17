@@ -24,26 +24,20 @@ namespace dining_room
             
             
             List<string> orderListNow = new List<string>(); // Список текущих заказов
+            List<int> pricesNow = new List<int>(); // Цены текущих заказов
 
-            CustomList myList = new CustomList(); // Булдыга для реализации 2 задания
-            myList.AppendInList(productsList["Хлеб"]);
-            myList.AppendInList(productsList["Салат"]);
-            myList.AppendInList(productsList["Пицца"]);
-            myList.AppendInList(productsList["Пюрешка"]);
-
+            /*CustomList myList = new CustomList(); // Булдыга для реализации 2 задания
+            
             
             foreach (var products in myList)
             {
                 Console.WriteLine(products);
             }
 
-            /*foreach (string product in myList)
-            {
-                orderListNow.Add(product);
-            }*/
-            myList.ClearList();
+            
+            myList.ClearList();*/
 
-            List<int> pricesNow = new List<int>();
+            
             pricesNow.Add(productsList["Хлеб"].Price);
             pricesNow.Add(productsList["Салат"].Price);
             pricesNow.Add(productsList["Пицца"].Price);
@@ -63,11 +57,7 @@ namespace dining_room
            
             galya.Greetings();
             
-            /*productsList.Sort(productSorter);
-            foreach (var food in productsList)
-            {
-                Console.WriteLine(food);
-            }*/
+            
             
         }
     }
