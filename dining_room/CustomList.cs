@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace dining_room
 {
@@ -21,48 +22,92 @@ namespace dining_room
             set => MyList[index] = value;
         }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
         public void Add(T item)
         {
-            if (!Contains(item))
-            {
-                MyList.Add(item);
-            }
-            else
-            {
-                Console.WriteLine("");
-            }
+            MyList.Add(item);
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            MyList.Clear();
         }
 
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            bool contain = false;
+            foreach (T unused in MyList.Where(temp => temp.Equals(item)))
+            {
+                contain = true;
+            }
+            return contain;
         }
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            if (array == null)  
+                throw new ArgumentNullException("Массив не может быть пустым");
+            if (arrayIndex < 0) 
+                throw new ArgumentOutOfRangeException("Начальный индекс массива не может быть отрицательным");
+            if (Count > array.Length - arrayIndex) 
+                throw new ArgumentException("Массив имеет меньше элементов, чем коллекция");
+            for (int i = 0; i < MyList.Count; i++) 
+            {
+                array[i + arrayIndex] = MyList[i];
+            }
         }
 
         public bool Remove(T item)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            for (int i = 0; i < MyList.Count; i++)
+            {
+                T currentT = (T)MyList[i];
+                if (item != null && item.GetHashCode() == currentT.GetHashCode())
+                {
+                    MyList.Remove(MyList[i]);
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
+        
+        public IEnumerator<T> GetEnumerator()
+        {
+            return MyList.GetEnumerator();
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return MyList.GetEnumerator();
+        }
         
+        public void SortByField(Func<Product, Product, bool> funcRealization)
+        {
+            for (int i = 0; i < MyList.Count; i++)
+            {
+                for(int j = i + 1; j < MyList.Count; j++)
+                {
+                    if(funcRealization(MyList[i], MyList[j]))
+                    {
+                        (MyList[i], MyList[j]) = (MyList[j], MyList[i]);
+                    }
+                }
+            }
+        }
+        
+        public void Foreach(Action<T> action)
+        {
+            if (action == null) 
+                Console.WriteLine("Action не установлен");
+            else
+            {
+                foreach(var item in MyList)
+                {
+                    action.Invoke(item);
+                }
+            }
+            
+        }
     }
 }
