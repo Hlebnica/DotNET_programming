@@ -14,7 +14,7 @@ namespace dining_room
             {
                 {"Хлеб", new Product("Хлеб", "Хлеб", 20, 12)},
                 {"Блины", new Product("Блины", "Блины", 200, 220)},
-                {"Пирог", new Product("Пирог", "Пирог", 300, 550)},
+                {"Пирог", new Product("Пирог", "Пирог", 300, 549)},
                 {"Салат", new Product("Салат", "Салат", 90, 110)},
                 {"Пирожок", new Product("Пирожок", "Тесто, картофель", 30, 20)},
                 {"Пицца", new Product("Пицца", "Тесто, сыр, помидоры", 250, 500)},
@@ -22,12 +22,41 @@ namespace dining_room
                 {"Пюрешка", new Product("Пюрешка", "Картофель, подлива", 100, 50)}
             };
             
-            
+            /*
             List<string> orderListNow = new List<string>(); // Список текущих заказов
-            List<int> pricesNow = new List<int>(); // Цены текущих заказов
-
-            /*CustomList myList = new CustomList(); // Булдыга для реализации 2 задания
+            List<int> pricesNow = new List<int>(); // Цены текущих заказов 
+            */
+            Employees vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
+            vanya.Greetings();
             
+            // Задание 2
+            CustomList<Product> myCustomList = new CustomList<Product>();
+            myCustomList.Add(productsList["Хлеб"]);
+            myCustomList.Add(productsList["Пирог"]);
+            myCustomList.Add(productsList["Пицца"]);
+            myCustomList.Add(productsList["Пюрешка"]);
+            foreach (var item in myCustomList)
+            {
+                Console.WriteLine(item);
+            }
+            
+            // Задание 3
+            Func<Product, Product, bool> priceFunc = (x, y) => x.Price.CompareTo(y.Price) == 1;
+            Func<Product, Product, bool> weightFunc = (x, y) => x.Weight.CompareTo(y.Weight) == 1;
+            Action<Product> printNameAndPrice = x => Console.WriteLine($"Название = {x.ProductName}, " +
+                                                                         $"Цена = {x.Price}");
+            Action<Product> printNameAndWeight = x => Console.WriteLine($"Название = {x.ProductName}, " +
+                                                                          $"Вес = {x.Weight}");
+            
+            Console.WriteLine("\nСортировка по цене");
+            myCustomList.SortByField(priceFunc);
+            myCustomList.Retrieve(printNameAndPrice);
+            
+            Console.WriteLine("\nСортировка по весу");
+            myCustomList.SortByField(weightFunc);
+            myCustomList.Retrieve(printNameAndWeight);
+
+            /*
             
             foreach (var products in myList)
             {
@@ -37,7 +66,7 @@ namespace dining_room
             
             myList.ClearList();*/
 
-            
+            /*
             pricesNow.Add(productsList["Хлеб"].Price);
             pricesNow.Add(productsList["Салат"].Price);
             pricesNow.Add(productsList["Пицца"].Price);
@@ -56,9 +85,9 @@ namespace dining_room
             Cook galya = new Cook("Галинченко", "Галя", "Галинченко", 32000);
            
             galya.Greetings();
-            
-            
-            
+            */
+
+
         }
     }
 }

@@ -4,14 +4,13 @@ using System.Text;
 
 namespace dining_room
 {
-    // Поддержка ICloneable
     public abstract class Employees // Информация о работнике (фамилия, имя, отчество, заработная плата)
     {
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
         public int Salary { get; set; }
-        public abstract string Post { get; set; }
+        //public abstract string Post { get; set; }
         public Employees(string surname, string name, string patronymic, int salary)
         {
             Surname = surname;
@@ -26,7 +25,7 @@ namespace dining_room
     {
         public Cashier(string surname, string name, string patronymic, int salary) 
             : base(surname, name, patronymic, salary) { }
-        public override string Post { get; set; } = "Кассир";
+        public string Post { get; set; } = "Кассир";
         public override void Greetings()
         {
             Console.WriteLine($"{Surname} {Name} {Patronymic} ({Post}):\nЗдравствуйте, что будете заказывать?");
@@ -47,7 +46,7 @@ namespace dining_room
     {
         public Cook(string surname, string name, string patronymic, int salary) 
             : base(surname, name, patronymic, salary) { }
-        public override string Post { get; set; } = "Повар";
+        public string Post { get; set; } = "Повар";
         public override void Greetings()
         {
             Console.WriteLine($"{Surname} {Name} {Patronymic} ({Post}):\nЗаказ готов *дзынь*");

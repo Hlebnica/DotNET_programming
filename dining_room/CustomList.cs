@@ -7,7 +7,6 @@ namespace dining_room
 {
     public class CustomList<T> : ICollection<T> where T : Product
     {
-        
         public List<T> MyList { get; set; }
         public int Count => MyList.Count;
         public bool IsReadOnly => false;
@@ -96,7 +95,7 @@ namespace dining_room
             }
         }
         
-        public void Foreach(Action<T> action)
+        public void Retrieve(Action<T> action)
         {
             if (action == null) 
                 Console.WriteLine("Action не установлен");
