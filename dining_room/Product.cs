@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace dining_room
 {
-    public class Product // Информация о продукте (название, ингридиенты, вес, цена)
+    public class  Product // Информация о продукте (название, ингридиенты, вес, цена)
     {
         public string ProductName { get; set; }
         public string Ingredients { get; set; }

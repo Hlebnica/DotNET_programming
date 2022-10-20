@@ -1,7 +1,10 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.IO;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace dining_room
 {
@@ -9,7 +12,6 @@ namespace dining_room
     {
         static void Main(string[] args)
         {
-            //ProductSorter<Product> productSorter = new ProductSorter<Product>();
             Dictionary<string, Product> productsList = new Dictionary<string, Product>()
             {
                 {"Хлеб", new Product("Хлеб", "Хлеб", 20, 12)},
@@ -26,8 +28,6 @@ namespace dining_room
             List<string> orderListNow = new List<string>(); // Список текущих заказов
             List<int> pricesNow = new List<int>(); // Цены текущих заказов 
             */
-            Employees vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
-            vanya.Greetings();
             
             // Задание 2
             CustomList<Product> myCustomList = new CustomList<Product>();
@@ -39,7 +39,7 @@ namespace dining_room
             {
                 Console.WriteLine(item);
             }
-            
+
             // Задание 3
             Func<Product, Product, bool> priceFunc = (x, y) => x.Price.CompareTo(y.Price) == 1;
             Func<Product, Product, bool> weightFunc = (x, y) => x.Weight.CompareTo(y.Weight) == 1;
@@ -55,15 +55,17 @@ namespace dining_room
             Console.WriteLine("\nСортировка по весу");
             myCustomList.SortByField(weightFunc);
             myCustomList.Retrieve(printNameAndWeight);
-
+            
+            
+            
+            
             /*
             
             foreach (var products in myList)
             {
                 Console.WriteLine(products);
             }
-
-            
+                       
             myList.ClearList();*/
 
             /*
@@ -73,7 +75,7 @@ namespace dining_room
             pricesNow.Add(productsList["Пюрешка"].Price);
             
 
-            Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
+            Employees vanya = new Cashier("Иванов", "Иван", "Иванович", 21000);
             vanya.Greetings();
             
             vanya.NotifyOrder(orderListNow);
