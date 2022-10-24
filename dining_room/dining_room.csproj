@@ -10,4 +10,8 @@
       <Compile Remove="ProductSorter.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0-rc.2.22472.3" />
+    </ItemGroup>
+
 </Project>

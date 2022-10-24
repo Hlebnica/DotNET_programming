@@ -5,6 +5,8 @@ namespace dining_room
 {
     public class LoggerMethods
     {
+        public static int Position = 2;
+        
         public static void LogInFile(string message)
         {
             try
@@ -19,6 +21,13 @@ namespace dining_room
             {
                 throw new FileNotFoundException();
             }
+        }
+        
+        public static void LogInConsole(string message)
+        {
+            Console.SetCursorPosition(3,Position);
+            Console.WriteLine(message);
+            Position++;
         }
     }
 }
