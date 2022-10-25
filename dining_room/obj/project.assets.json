@@ -270,24 +270,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dmitriy\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\apple\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dmitriy\\Desktop\\DotNET_programming\\dining_room\\dining_room.csproj",
+      "projectUniqueName": "F:\\dotNET_prog\\DotNET_programming\\dining_room\\dining_room.csproj",
       "projectName": "dining_room",
-      "projectPath": "C:\\Users\\Dmitriy\\Desktop\\DotNET_programming\\dining_room\\dining_room.csproj",
-      "packagesPath": "C:\\Users\\Dmitriy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dmitriy\\Desktop\\DotNET_programming\\dining_room\\obj\\",
+      "projectPath": "F:\\dotNET_prog\\DotNET_programming\\dining_room\\dining_room.csproj",
+      "packagesPath": "C:\\Users\\apple\\.nuget\\packages\\",
+      "outputPath": "F:\\dotNET_prog\\DotNET_programming\\dining_room\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\apple\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -333,7 +328,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
       }
     }
   }

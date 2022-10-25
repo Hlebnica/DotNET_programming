@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace dining_room
 {
@@ -23,15 +25,7 @@ namespace dining_room
         
         public static void LogInConsole(string message)
         {
-            try
-            {
-                Console.WriteLine(message);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            Console.WriteLine(message);
         }
     }
 }

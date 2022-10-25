@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "hyeecTAB2JmUo4dTxqD2zj8ChHRhpRKPqHhwyF8tl3OSh/NeCWojZqHSELJuKSNJvc+891rE9WXMyZvFXPQANg==",
+  "dgSpecHash": "tXwDgevnWL3p3TXCr36u2OYsAxQKjID6MTcbitWMGrmrXQKUdKS71EWVZNJIURSmISdJBMY3kehlSTDiLMp4LA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dmitriy\\Desktop\\DotNET_programming\\dining_room\\dining_room.csproj",
+  "projectFilePath": "F:\\dotNET_prog\\DotNET_programming\\dining_room\\dining_room.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dmitriy\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0-rc.2.22472.3\\system.configuration.configurationmanager.7.0.0-rc.2.22472.3.nupkg.sha512",
-    "C:\\Users\\Dmitriy\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
-    "C:\\Users\\Dmitriy\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0-rc.2.22472.3\\system.security.cryptography.protecteddata.7.0.0-rc.2.22472.3.nupkg.sha512",
-    "C:\\Users\\Dmitriy\\.nuget\\packages\\system.security.permissions\\7.0.0-rc.2.22472.3\\system.security.permissions.7.0.0-rc.2.22472.3.nupkg.sha512",
-    "C:\\Users\\Dmitriy\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+    "C:\\Users\\apple\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0-rc.2.22472.3\\system.configuration.configurationmanager.7.0.0-rc.2.22472.3.nupkg.sha512",
+    "C:\\Users\\apple\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\apple\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0-rc.2.22472.3\\system.security.cryptography.protecteddata.7.0.0-rc.2.22472.3.nupkg.sha512",
+    "C:\\Users\\apple\\.nuget\\packages\\system.security.permissions\\7.0.0-rc.2.22472.3\\system.security.permissions.7.0.0-rc.2.22472.3.nupkg.sha512",
+    "C:\\Users\\apple\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

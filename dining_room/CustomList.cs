@@ -7,10 +7,11 @@ namespace dining_room
 {
     public class CustomList<T> : ICollection<T> where T : Product
     {
-        private readonly Logger _logger;
+        private readonly Logger _logger = new();
         public List<T> MyList { get; set; }
         public int Count => MyList.Count;
         public bool IsReadOnly => false;
+        
         public CustomList()
         {
             MyList = new List<T>();
@@ -25,7 +26,9 @@ namespace dining_room
         public void Add(T item)
         {
             MyList.Add(item);
-            
+            _logger.Notify += LoggerMethods.LogInFile;
+            _logger.Notify += LoggerMethods.LogInConsole;
+            _logger.OnNotify($"Пользователь добавил {item} в список");
         }
 
         public void Clear()
