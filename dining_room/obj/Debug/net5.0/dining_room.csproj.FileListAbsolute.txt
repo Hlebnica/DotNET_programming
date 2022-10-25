@@ -46,3 +46,9 @@ C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\dining_
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\ref\dining_room.dll
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\dining_room.pdb
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\dining_room.genruntimeconfig.cache
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\System.Security.AccessControl.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\System.Security.Permissions.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.AccessControl.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\dining_room.csproj.CopyComplete
