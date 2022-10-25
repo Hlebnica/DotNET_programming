@@ -5,8 +5,6 @@ namespace dining_room
 {
     public class LoggerMethods
     {
-        public static int Position = 2;
-        
         public static void LogInFile(string message)
         {
             try
@@ -25,9 +23,15 @@ namespace dining_room
         
         public static void LogInConsole(string message)
         {
-            Console.SetCursorPosition(3,Position);
-            Console.WriteLine(message);
-            Position++;
+            try
+            {
+                Console.WriteLine(message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ namespace dining_room
 {
     public class CustomList<T> : ICollection<T> where T : Product
     {
+        private readonly Logger _logger;
         public List<T> MyList { get; set; }
         public int Count => MyList.Count;
         public bool IsReadOnly => false;
@@ -24,6 +25,7 @@ namespace dining_room
         public void Add(T item)
         {
             MyList.Add(item);
+            
         }
 
         public void Clear()
