@@ -26,23 +26,32 @@ namespace dining_room
                 {"Пюрешка", new Product("Пюрешка", "Картофель, подлива", 100, 50)}
             };
             
-            /*
+            Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000); 
+            vanya.Greetings(); // Приветствие работника
+            
             List<string> orderListNow = new List<string>(); // Список текущих заказов
             List<int> pricesNow = new List<int>(); // Цены текущих заказов 
-            */
             
             // Задание 2
-            CustomList<Product> myCustomList = new CustomList<Product>();
+            CustomList<Product> myCustomList = new CustomList<Product>(); // Формирование текущего заказа покупателя
             myCustomList.Add(productsList["Хлеб"]);
-            myCustomList.Add(productsList["Пирог"]);
+            myCustomList.Add(productsList["Салат"]);
             myCustomList.Add(productsList["Пицца"]);
             myCustomList.Add(productsList["Пюрешка"]);
-            foreach (var item in myCustomList)
+            
+            foreach (var product in myCustomList)
             {
-                Console.WriteLine(item);
+                orderListNow.Add(product.ProductName);
+                pricesNow.Add(product.Price);
             }
+            
+            vanya.NotifyOrder(orderListNow);
 
-            // Задание 3
+            Check check = new Check(orderListNow, vanya.Surname, vanya.Name, vanya.Patronymic, pricesNow);
+            Console.WriteLine(check);
+
+            // Задание 3 
+            /*
             Func<Product, Product, bool> priceFunc = (x, y) => x.Price.CompareTo(y.Price) == 1;
             Func<Product, Product, bool> weightFunc = (x, y) => x.Weight.CompareTo(y.Weight) == 1;
             Action<Product> printNameAndPrice = x => Console.WriteLine($"Название = {x.ProductName}, " +
@@ -56,19 +65,10 @@ namespace dining_room
             
             Console.WriteLine("\nСортировка по весу");
             myCustomList.SortByField(weightFunc);
-            myCustomList.Retrieve(printNameAndWeight);
-            
-            
-            
-            
-            /*
-            
-            foreach (var products in myList)
-            {
-                Console.WriteLine(products);
-            }
-                       
-            myList.ClearList();*/
+            myCustomList.Retrieve(printNameAndWeight); */
+
+
+
 
             /*
             pricesNow.Add(productsList["Хлеб"].Price);

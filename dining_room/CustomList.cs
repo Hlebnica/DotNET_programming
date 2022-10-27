@@ -29,11 +29,18 @@ namespace dining_room
             _logger.Notify += LoggerMethods.LogInFile;
             _logger.Notify += LoggerMethods.LogInConsole;
             _logger.OnNotify($"Пользователь добавил {item} в список");
+            _logger.Notify -= LoggerMethods.LogInFile;
+            _logger.Notify -= LoggerMethods.LogInConsole;
         }
 
         public void Clear()
         {
             MyList.Clear();
+            _logger.Notify += LoggerMethods.LogInFile;
+            _logger.Notify += LoggerMethods.LogInConsole;
+            _logger.OnNotify($"Пользователь очистил список");
+            _logger.Notify -= LoggerMethods.LogInFile;
+            _logger.Notify -= LoggerMethods.LogInConsole;
         }
 
         public bool Contains(T item)
