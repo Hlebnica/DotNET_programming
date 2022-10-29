@@ -10,7 +10,7 @@ namespace dining_room
 {
     public interface ISerializeDeserialize<T> where T : Dictionary<string, object>
     {
-        void SerializeDictionary(Dictionary<string, object> dictionary, string filename);
+        void SerializeDictionary(Dictionary<string, Product> dictionary, string filename);
         Dictionary<string, object> DeserializeDictionary(string filename);
     }
 }

@@ -14,6 +14,8 @@ namespace dining_room
     {
         static void Main(string[] args)
         {
+            Json<Dictionary<string, object>> productDictionarySave = new Json<Dictionary<string, object>>();
+
             Dictionary<string, Product> productsList = new Dictionary<string, Product>()
             {
                 {"Хлеб", new Product("Хлеб", "Хлеб", 20, 12)},
@@ -25,6 +27,8 @@ namespace dining_room
                 {"Суп", new Product("Суп", "Картофель, вода, мясо, специи", 150, 80)},
                 {"Пюрешка", new Product("Пюрешка", "Картофель, подлива", 100, 50)}
             };
+            
+            productDictionarySave.SerializeDictionary(productsList, Config.JSON_PATH);
             
             Cashier vanya = new Cashier("Иванов", "Иван", "Иванович", 21000); 
             vanya.Greetings(); // Приветствие работника
@@ -67,7 +71,7 @@ namespace dining_room
             Console.WriteLine("\nСортировка по весу");
             myCustomList.SortByField(weightFunc);
             myCustomList.Retrieve(printNameAndWeight); */
-
+            
             
 
 

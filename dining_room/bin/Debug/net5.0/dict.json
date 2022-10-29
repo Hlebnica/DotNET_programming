@@ -1,0 +1,50 @@
+{
+  "Хлеб": {
+    "ProductName": "Хлеб",
+    "Ingredients": "Хлеб",
+    "Weight": 20,
+    "Price": 12
+  },
+  "Блины": {
+    "ProductName": "Блины",
+    "Ingredients": "Блины",
+    "Weight": 200,
+    "Price": 220
+  },
+  "Пирог": {
+    "ProductName": "Пирог",
+    "Ingredients": "Пирог",
+    "Weight": 300,
+    "Price": 549
+  },
+  "Салат": {
+    "ProductName": "Салат",
+    "Ingredients": "Салат",
+    "Weight": 90,
+    "Price": 110
+  },
+  "Пирожок": {
+    "ProductName": "Пирожок",
+    "Ingredients": "Тесто, картофель",
+    "Weight": 30,
+    "Price": 20
+  },
+  "Пицца": {
+    "ProductName": "Пицца",
+    "Ingredients": "Тесто, сыр, помидоры",
+    "Weight": 250,
+    "Price": 500
+  },
+  "Суп": {
+    "ProductName": "Суп",
+    "Ingredients": "Картофель, вода, мясо, специи",
+    "Weight": 150,
+    "Price": 80
+  },
+  "Пюрешка": {
+    "ProductName": "Пюрешка",
+    "Ingredients": "Картофель, подлива",
+    "Weight": 100,
+    "Price": 50
+  }
+}

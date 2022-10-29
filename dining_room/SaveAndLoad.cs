@@ -9,7 +9,7 @@ namespace dining_room
 {
     public class Json<T> : ISerializeDeserialize<T> where T : Dictionary<string, object>
     {
-        public void SerializeDictionary(Dictionary<string, object> dictionary, string filename)
+        public void SerializeDictionary(Dictionary<string, Product> dictionary, string filename)
         {
             try
             {
