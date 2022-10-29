@@ -45,9 +45,10 @@ namespace dining_room
                 pricesNow.Add(product.Price);
             }
             
-            vanya.NotifyOrder(orderListNow);
-
-            Check check = new Check(orderListNow, vanya.Surname, vanya.Name, vanya.Patronymic, pricesNow);
+            vanya.NotifyOrder(orderListNow); // Кассир сообщает о новом заказе
+            
+            // Создание чека с заказом
+            Check check = new Check(orderListNow, vanya.Surname, vanya.Name, vanya.Patronymic, pricesNow); 
             Console.WriteLine(check);
 
             // Задание 3 
@@ -67,7 +68,7 @@ namespace dining_room
             myCustomList.SortByField(weightFunc);
             myCustomList.Retrieve(printNameAndWeight); */
 
-
+            
 
 
             /*
