@@ -46,5 +46,23 @@
     "Ingredients": "Картофель, подлива",
     "Weight": 100,
     "Price": 50
+  },
+  "Тест1": {
+    "ProductName": "Тест1",
+    "Ingredients": "Тест1, тест1",
+    "Weight": 123,
+    "Price": 123
+  },
+  "Тест2": {
+    "ProductName": "Тест2",
+    "Ingredients": "Тест2",
+    "Weight": 123,
+    "Price": 123
+  },
+  "123": {
+    "ProductName": "123",
+    "Ingredients": "123",
+    "Weight": 123,
+    "Price": 123
   }
 }

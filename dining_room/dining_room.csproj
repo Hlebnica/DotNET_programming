@@ -8,6 +8,7 @@
     <ItemGroup>
       <Compile Remove="SorterCustomList.cs" />
       <Compile Remove="ProductSorter.cs" />
+      <Compile Remove="ProductExeption.cs" />
     </ItemGroup>
 
     <ItemGroup>

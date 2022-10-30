@@ -4,10 +4,11 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
 using Formatting = Newtonsoft.Json.Formatting;
+using System.Runtime.Serialization;
 
 namespace dining_room
 {
-    public class Json<T> : ISerializeDeserialize<T> where T : Dictionary<string, object>
+    public class Json<T> : ISerializeDeserialize<T> where T : Dictionary<string, Product> // Сериализация и десериализация JSON формата
     {
         public void SerializeDictionary(Dictionary<string, Product> dictionary, string filename)
         {
@@ -25,7 +26,7 @@ namespace dining_room
             }
         }
 
-        public Dictionary<string, object> DeserializeDictionary(string filename)
+        public Dictionary<string, Product> DeserializeDictionary(string filename)
         {
             try
             {
@@ -33,7 +34,45 @@ namespace dining_room
                 {
                     string dictionary = reader.ReadToEnd();
                     reader.Close();
-                    return JsonConvert.DeserializeObject<Dictionary<string, object>>(dictionary);
+                    return JsonConvert.DeserializeObject<Dictionary<string, Product>>(dictionary);
+                }
+            }
+            catch
+            {
+                throw new FileNotFoundException();
+            }
+        }
+    }
+
+    public class Xml<T> : ISerializeDeserialize<T> where T : Dictionary<string, Product>
+    {
+        public void SerializeDictionary(Dictionary<string, Product> dictionary, string filename)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filename))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Dictionary<string, Product>));
+                    serializer.Serialize(writer, dictionary);
+                    writer.Close();
+                }
+            }
+            catch
+            {
+                throw new FileNotFoundException();
+            }
+        }
+
+        public Dictionary<string, Product> DeserializeDictionary(string filename)
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader(filename))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Dictionary<string, Product>));
+                    Dictionary<string, Product> dictionary = serializer.Deserialize(reader) as Dictionary<string, Product>;
+                    reader.Close();
+                    return dictionary;
                 }
             }
             catch
