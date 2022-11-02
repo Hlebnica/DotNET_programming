@@ -34,7 +34,6 @@ C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\dining_
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\dining_room.runtimeconfig.json
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\dining_room.runtimeconfig.dev.json
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\dining_room.dll
-C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\ref\dining_room.dll
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\dining_room.pdb
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\dining_room.csproj.AssemblyReference.cache
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\dining_room.GeneratedMSBuildEditorConfig.editorconfig
@@ -61,3 +60,5 @@ F:\dotNET_prog\DotNET_programming\dining_room\bin\Debug\net5.0\dining_room.dll.c
 C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\dining_room.dll.config
 F:\dotNET_prog\DotNET_programming\dining_room\bin\Debug\net5.0\Newtonsoft.Json.dll
 F:\dotNET_prog\DotNET_programming\dining_room\obj\Debug\net5.0\refint\dining_room.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Dmitriy\Desktop\DotNET_programming\dining_room\obj\Debug\net5.0\refint\dining_room.dll

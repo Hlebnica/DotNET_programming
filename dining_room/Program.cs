@@ -20,6 +20,12 @@ namespace dining_room
             // Словарь с меню
             Dictionary<string, Product> productsList = productDictionaryJson.DeserializeDictionary(Config.JSON_PATH);
             
+            Console.WriteLine("Полученное меню");
+            foreach (var item in productsList)
+            {
+                Console.WriteLine(item);
+            }
+            
             Console.WriteLine("Введите 1, чтобы добавить товар в меню");
             string? addProduct = Console.ReadLine();
             if (addProduct == "1")
@@ -50,6 +56,11 @@ namespace dining_room
                         new Product(productName, productIngredients, productWeight, productPrice));
                     // Сохранение меню в JSON
                     productDictionaryJson.SerializeDictionary(productsList, Config.JSON_PATH);
+                    Console.WriteLine("Обновленное меню");
+                    foreach (var item in productsList)
+                    {
+                        Console.WriteLine(item);
+                    }
                 }
                 catch 
                 {
@@ -81,6 +92,8 @@ namespace dining_room
             // Создание чека с заказом (Задание 4 - показ логирования)
             Check check = new Check(orderListNow, vanya.Surname, vanya.Name, vanya.Patronymic, pricesNow); 
             Console.WriteLine(check);
+            
+            myCustomList.Clear();
 
             // Задание 3 
             /*
